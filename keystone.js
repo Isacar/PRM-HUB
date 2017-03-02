@@ -72,6 +72,8 @@ keystone.set('email locals', {
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'));
 
+//change sign in logo image
+keystone.set('signin logo', '../logo.png');
 
 // Switch Keystone Email defaults to handlebars
 keystone.Email.defaults.templateExt = 'hbs';
