@@ -12,7 +12,7 @@ var handlebars = require('express-handlebars');
 
 keystone.init({
 	'name': 'requests',
-	'brand': 'requests',
+	'brand': 'Request App',
 
 	'sass': 'public',
 	'static': 'public',
@@ -73,7 +73,7 @@ keystone.set('email locals', {
 keystone.set('email tests', require('./routes/emails'));
 
 //change sign in logo image
-keystone.set('signin logo', '../logo.png');
+keystone.set('signin logo', '../images/logo-vertical.png');
 
 // Switch Keystone Email defaults to handlebars
 keystone.Email.defaults.templateExt = 'hbs';
@@ -85,6 +85,9 @@ keystone.set('nav', {
 	requests: 'requests',
 	users: 'users',
 });
+
+//redirect users after signin
+keystone.set('signin redirect', '/');
 
 //take changes
 // Start Keystone to connect to your database and initialise the web server

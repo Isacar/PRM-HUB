@@ -8,26 +8,30 @@ exports = module.exports = function (req, res) {
 
 	// Set locals
 	locals.section = 'request';
-	locals.requestRelevance = Request.fields.relevance.ops;
+	locals.requestPriorities = Request.fields.priority.ops;
+	locals.requestTypes = Request.fields.type.ops;
+	locals.requestFormats = Request.fields.format.ops;
+	locals.requestFrequencies = Request.fields.frequency.ops;
+
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.requestSubmitted = false;
 
-	// On POST requests, add the Enquiry item to the database
+	// On POST requests, add the request item to the database
 	view.on('post', { action: 'request' }, function (next) {
-
 		var newRequest = new Request.model();
 		var updater = newRequest.getUpdateHandler(req);
 
 		updater.process(req.body, {
 			flashErrors: true,
-			fields: 'name, email, relevance, description',
+			fields: 'name, creator, priority, type, format, frequency, description, benefit',
 			errorMessage: 'There was a problem submitting your request:',
 		}, function (err) {
 			if (err) {
 				locals.validationErrors = err.errors;
+				console.log(err.errors);
 			} else {
-				locals.enquirySubmitted = true;
+				locals.requestSubmitted = true;
 			}
 			next();
 		});

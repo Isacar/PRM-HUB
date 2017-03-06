@@ -5837,3 +5837,7 @@ button.close {
 
 .request-feedback {
   text-align: center; }
+
+.logo-horizontal {
+  background: url("../images/logo-vertical.png") 50% 100px no-repeat fixed;
+  background-size: cover; }
