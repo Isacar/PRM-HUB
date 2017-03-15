@@ -4,23 +4,25 @@
 			{{#if hasRequests}}
 			<div class="panel panel-default">
 			  <!-- Default panel contents -->
-			  <div class="panel-heading">These are your requests:</div>
+			  <div class="panel-heading">These are your assignments:</div>
 			  <!-- Table -->
 			  <table class="table">
 			    <thead>
 			    	<tr>
-					<th>Request</th><th>Status</th><th>Assignee</th><th>Created at</th>
+					<th>Request</th><th>Status</th><th>Priority</th><th>Created at</th>
 				</tr>
 			   </thead>
 			   <tbody>
 				{{#each requests}}
-			   	<tr><td>{{name}}</td><td>{{status}}</td><td>{{assignee.name.first}}  {{assignee.name.last}}</td><td>{{date createdAt format='DD-MM-YYYY'}}</td></tr>
+
+					<tr><td><a href="assignment/{{_id}}">{{name}}</a></td><td>{{status}}</td><td>{{priority}}</td><td>{{date createdAt format='DD-MM-YYYY'}}</td></tr>
+
 				{{/each}}
 			   </tbody>
 			  </table>
 			</div>
 			{{else}}
-			<h3 class="request-feedback">You haven't submited any</h3>
+			<h3 class="request-feedback">You don't have any</h3>
 			{{/if}}
 		</div>
 	</div>

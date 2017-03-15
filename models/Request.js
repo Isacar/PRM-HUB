@@ -7,13 +7,14 @@ var Types = keystone.Field.Types;
  */
 
 var Request = new keystone.List('Request', {
-	nocreate: true,
-	noedit: true,
+	nocreate: false,
+	noedit: false,
 });
 
 Request.add({
 	name: { type: Types.Text, required: true },
-	creator: { type: Types.Relationship, ref: 'User'},
+	client: { type: Types.Relationship, ref: 'User', required: true, initial:true},
+	assignee: { type: Types.Relationship, ref: 'User', filters: { role: 'assignee' }},
 	type: { type: Types.Select, options: [
 		{ value: 'raw', label: 'raw data' },
 		{ value: 'report', label: 'new report' },
@@ -21,7 +22,7 @@ Request.add({
 		{ value: 'enhacement', label: 'report enhancement' },
 		{ value: 'process', label: 'new process' },
 		{ value: 'error', label: 'error detected' },
-	], required: true},
+	], required: true, initial:true},
 	format: { type: Types.Select, options: [
 		{ value: 'xlsx', label: 'excel' },
 		{ value: 'flat', label: 'flat file' },
@@ -31,22 +32,23 @@ Request.add({
 		{ value: 'sql-query', label: 'sql query' },
 		{ value: 'alteryx-wf', label: 'alteryx workflow' },
 		{ value: 'shares-commands', label: 'shares command' },
-	], required: true},
-	frequency: { type: Types.Select, options: [
-		{ value: 'adhoc', label: 'ad-hoc' },
-		{ value: 'daily', label: 'daily' },
-		{ value: 'periodic', label: 'periodic' },
-	], required: true  },
+		{ value: 'application', label: 'application' },
+
+	], required: true, initial:true},
+	frequency: { type: Types.Select, options:  'ad-hoc, daily, weekly, monthly, bi-monthly, other',
+	required: true , initial:true },
 	priority: { type: Types.Select, options: [
 		{ value: '1', label: 'urgent' },
 		{ value: '2', label: 'very important' },
 		{ value: '3', label: 'important' },
 		{ value: '4', label: 'nice to have' },
-	], required: true },
-	description: { type: Types.Textarea, required: true},
-	benefit: { type: Types.Textarea, required: true},
+	], required: true , initial:true},
+	description: { type: Types.Textarea, required: true, initial:true},
+	benefit: { type: Types.Textarea, required: true, initial:true},
 	createdAt: { type: Date, default: Date.now },
-	closedAt: { type: Date, default: Date },
+	closedAt: { type: Date, default: null },
+//TODO auto populate field
+	status: { type: Types.Select, options: 'open, in progress, closed', default: 'open'},
 });
 
 Request.schema.pre('save', function (next) {

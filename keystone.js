@@ -34,6 +34,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	//'signin url': '/signin'
 });
 
 // Load your project's Models

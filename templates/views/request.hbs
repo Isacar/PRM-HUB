@@ -6,13 +6,13 @@
 			{{else}}
 			<form method="post">
 				<input type="hidden" name="action" value="request">
-				<input type="hidden" name="creator" value="{{user._id}}">
+				<input type="hidden" name="client" value="{{user._id}}">
 				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>name your request</label>
+					<label>Name your request</label>
 					<input type="text" name="name"  class="form-control" value="{{formData.name}}">
 				</div>
 				<div class="form-group {{#if validationErrors.priority}}has-error{{/if}}">
-					<label>how critical is your request?</label>
+					<label>How critical is your request?</label>
 					<select name="priority" class="form-control">
 						<option value="">(select one)</option>
 						{{#each requestPriorities}}
@@ -21,7 +21,7 @@
 					</select>
 				</div>
 				<div class="form-group {{#if validationErrors.reqType}}has-error{{/if}}">
-					<label>what sort of request is it?</label>
+					<label>What sort of request is it?</label>
 					<select name="type" class="form-control">
 						<option value="">(select one)</option>
 						{{#each requestTypes}}
@@ -30,7 +30,7 @@
 					</select>
 				</div>
 				<div class="form-group {{#if validationErrors.reqFormat}}has-error{{/if}}">
-					<label>what type of output do you need?</label>
+					<label>What type of output do you need?</label>
 					<select name="format" class="form-control">
 						<option value="">(select one)</option>
 						{{#each requestFormats}}
@@ -39,7 +39,7 @@
 					</select>
 				</div>
 				<div class="form-group {{#if validationErrors.reqFrequency}}has-error{{/if}}">
-					<label>how often do you need the output?</label>
+					<label>How often do you need the output?</label>
 					<select name="frequency" class="form-control">
 						<option value="">(select one)</option>
 						{{#each requestFrequencies}}
@@ -48,11 +48,11 @@
 					</select>
 				</div>
 				<div class="form-group {{#if validationErrors.description}}has-error{{/if}} ">
-					<label>describe your request</label>
+					<label>Describe your request</label>
 					<textarea name="description" placeholder="describe your request..." rows="4" class="form-control">{{formData.description}}</textarea>
 				</div>
 				<div class="form-group {{#if validationErrors.benefit}}has-error{{/if}} ">
-					<label>how and who will it benefit</label>
+					<label>How and who will it benefit</label>
 					<textarea name="benefit" placeholder="describe the benefit..." rows="4" class="form-control">{{formData.benefit}}</textarea>
 				</div>
 				<div class="form-actions">

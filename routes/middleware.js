@@ -20,11 +20,14 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		//{ label: 'home', key: 'home', href: '/' },
-		{ label: 'my requests', key: 'myRequests', href: '/myRequests' },
-		{ label: 'request', key: 'request', href: '/request' },
+		{ label: 'My requests', key: 'myRequests', href: '/myRequests' },
+		{ label: 'New request', key: 'request', href: '/request' },
 
 	];
 	res.locals.user = req.user;
+	if (req.user && req.user.role == 'assignee') {
+		res.locals.navLinks.push({ label: 'My assignments', key: 'assignments', href: '/assignments' });
+	}
 	next();
 };
 

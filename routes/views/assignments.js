@@ -7,13 +7,12 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Set locals
-	locals.section = 'myRequests';
+	locals.section = 'assignments';
 	locals.hasRequests = false;
 	view.on('init', function (next) {
 		//query db with logged in user data
 		Request.model.find()
-		.where('client', req.user._id)
-		.populate('assignee')
+		.where('assignee', req.user._id)
 		.sort('-createdAt')
 		.exec(function(err, requests){
 			//if (requests) {
@@ -23,5 +22,5 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-	view.render('myRequests');
+	view.render('assignments');
 };

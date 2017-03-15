@@ -23,3 +23,25 @@
 	background: url('../images/logo-vertical.png') 50% 100px no-repeat fixed;
   	background-size: cover;
 }
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+//main menu
+
+
+.navbar-default .navbar-brand {
+	color: $copa-blue;
+
+}
+.navbar-default .navbar-nav > li > a {
+	color: $copa-blue;
+
+}
+.landing-logo{
+	max-width: 70%;
+	margin: auto;
+}
+.user-name{
+	//border-right: 0.5px solid #e7e7e7;
+}

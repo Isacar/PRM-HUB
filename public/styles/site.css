@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5841,3 +5842,16 @@ button.close {
 .logo-horizontal {
   background: url("../images/logo-vertical.png") 50% 100px no-repeat fixed;
   background-size: cover; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.navbar-default .navbar-brand {
+  color: #0060a9; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #0060a9; }
+
+.landing-logo {
+  max-width: 70%;
+  margin: auto; }
