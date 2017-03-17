@@ -40,7 +40,7 @@ exports = module.exports = function (app) {
 	app.all('/request', routes.views.request);
 	app.all('/myRequests', routes.views.myRequests);
 	app.all('/assignments', routes.views.assignments);
-	app.get('/assignment/:id', routes.views.assignment);
+	app.all('/assignment/:id', routes.views.assignment);
 
 
 

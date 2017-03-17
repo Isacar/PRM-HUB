@@ -3,6 +3,12 @@
 		<div class="col-md-10 col-md-offset-1">
 			<h4>{{assignment.name}}</h4>
 		  	<div class="panel-body"><b>Description: </b>{{assignment.description}}</div>
+			{{#ifeq 'open' assignment.status}}
+			<form method="post">
+				<input type="hidden" name="action" value="completed">
+				<button type="submit" class="btn btn-success">Completed</button>
+			</form>
+			{{/ifeq}}
 		</div>
 	</div>
 </div>

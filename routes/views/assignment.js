@@ -24,6 +24,22 @@ exports = module.exports = function (req, res) {
 			});
 
 		});
+	//change state to completed
+	view.on('post', { action: 'completed' }, function (next) {
+		var q = Request.model.findOne({
+			_id: locals.filters.assignment,
+		});
+		q.exec(function (err, result) {
+			result.status = 'closed';
+			result.save(function (err) {
+				if (err) return res.err(err);
+				req.flash('success', 'Your assignment has been updated');
+				//locals.assignment = result;
+				res.redirect('/assignments');
+				//next();
+			});
+		});
+	});
 
 	view.render('assignment');
 };

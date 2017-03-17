@@ -15,10 +15,13 @@ exports = module.exports = function (req, res) {
 		.where('assignee', req.user._id)
 		.sort('-createdAt')
 		.exec(function(err, requests){
-			//if (requests) {
+			if (requests) {
 				locals.hasRequests = true;
 				locals.requests = requests;
+			}
+			console.log(requests);
 				next();
+
 		});
 	});
 
