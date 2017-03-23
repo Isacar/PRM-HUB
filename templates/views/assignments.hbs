@@ -9,13 +9,13 @@
 			  <table class="table">
 			    <thead>
 			    	<tr>
-					<th>Request</th><th>Status</th><th>Priority</th><th>Created at</th>
+					<th>Request</th><th>Client</th><th>Status</th><th>Priority</th><th>Created at</th>
 				</tr>
 			   </thead>
 			   <tbody>
 				{{#each requests}}
 
-					<tr><td><a href="assignment/{{_id}}">{{name}}</a></td><td>{{status}}</td><td>{{priority}}</td><td>{{date createdAt format='DD-MM-YYYY'}}</td></tr>
+					<tr><td><a href="assignment/{{_id}}">{{name}}</a></td><td>{{client.name.first}} {{client.name.last}}</td><td>{{status}}</td><td>{{priority}}</td><td>{{date createdAt format='DD-MM-YYYY'}}</td></tr>
 
 				{{/each}}
 			   </tbody>

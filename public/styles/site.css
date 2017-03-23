@@ -5855,3 +5855,8 @@ body {
 .landing-logo {
   max-width: 70%;
   margin: auto; }
+
+.request-description {
+  resize: none;
+  height: 200px !important;
+  margin-bottom: 20px; }

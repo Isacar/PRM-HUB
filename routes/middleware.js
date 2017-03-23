@@ -25,8 +25,13 @@ exports.initLocals = function (req, res, next) {
 
 	];
 	res.locals.user = req.user;
+	//show assignments only for team members
 	if (req.user && req.user.role == 'assignee') {
 		res.locals.navLinks.push({ label: 'My assignments', key: 'assignments', href: '/assignments' });
+	}
+	//show admin panel if admin
+	if (req.user && req.user.isAdmin) {
+		res.locals.navLinks.push({ label: 'Admin', key: 'admin', href: '/keystone' });
 	}
 	next();
 };

@@ -16,7 +16,7 @@ exports = module.exports = function (req, res) {
 
 			var q = Request.model.findOne({
 				_id: locals.filters.assignment,
-			}).populate('creator');
+			}).populate('client');
 
 			q.exec(function (err, result) {
 				locals.assignment = result;
@@ -31,6 +31,8 @@ exports = module.exports = function (req, res) {
 		});
 		q.exec(function (err, result) {
 			result.status = 'closed';
+			result.closedAt = Date.now();
+			console.log(result);
 			result.save(function (err) {
 				if (err) return res.err(err);
 				req.flash('success', 'Your assignment has been updated');
