@@ -10,7 +10,7 @@ exports = module.exports = function (req, res) {
 	locals.filters = {
 		assignment: req.params.id,
 	};
-	locals.section = 'assignment';
+	locals.section = 'assignments';
 	// Load the current assignment
 		view.on('init', function (next) {
 

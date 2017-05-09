@@ -86,6 +86,6 @@ Request.schema.methods.sendNotificationEmail = function (callback) {
 	});
 };
 
-Request.defaultSort = '-priority';
-Request.defaultColumns = 'name, priority, creator, createdAt';
+Request.defaultSort = '-createdAt';
+Request.defaultColumns = 'name, priority, client, assignee, status, createdAt';
 Request.register();

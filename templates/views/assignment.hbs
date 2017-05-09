@@ -1,21 +1,24 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<h4>{{assignment.name}}</h4>
-		  	<div class="panel-body"><b>Description: </b></div>
-			<div class="form-group">
-				<textarea readonly rows="4" class="form-control request-description">{{assignment.description}}</textarea>
-			<div class="">
-
+			<div class="panel panel-primary">
+				<div class="panel-heading">{{assignment.name}}</div>
+				<div class="panel-body">
+					<p><b>Description:</b> {{assignment.description}}</p>
+					<p><b>Format:</b> {{assignment.format}}</p>
+					<p><b>Frequency:</b> {{assignment.frequency}}</p>
+					<p><b>Benefit:</b> {{assignment.benefit}}</p>
+				</div>
 			</div>
-			{{#ifeq 'closed' assignment.status}}
-			{{!-- nothign to show --}}
-			{{else}}
 
-			<form method="post">
-				<input type="hidden" name="action" value="completed">
-				<button type="submit" class="btn btn-success">Completed</button>
-			</form>
+			{{#ifeq 'closed' assignment.status}}
+				{{!-- nothign to show --}}
+				{{else}}
+
+					<form method="post">
+						<input type="hidden" name="action" value="completed">
+						<button type="submit" class="btn btn-success">Completed</button>
+					</form>
 			{{/ifeq}}
 		</div>
 	</div>
