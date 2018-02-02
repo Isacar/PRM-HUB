@@ -1,5 +1,7 @@
 var keystone = require('keystone');
 var Request = keystone.list('Request');
+var Team = keystone.list('Team');
+
 
 exports = module.exports = function (req, res) {
 
@@ -10,8 +12,9 @@ exports = module.exports = function (req, res) {
 	locals.section = 'request';
 	locals.requestPriorities = Request.fields.priority.ops;
 	locals.requestTypes = Request.fields.type.ops;
-	locals.requestFormats = Request.fields.format.ops;
+	//locals.requestFormats = Request.fields.format.ops;
 	locals.requestFrequencies = Request.fields.frequency.ops;
+	//locals.requestTeams = Request.fields.team.ops;
 
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
@@ -24,7 +27,7 @@ exports = module.exports = function (req, res) {
 
 		updater.process(req.body, {
 			flashErrors: true,
-			fields: 'name, client, priority, type, format, frequency, description, benefit',
+			fields: 'name, client, priority, type, team, frequency, description, benefit',
 			errorMessage: 'There was a problem submitting your request:',
 		}, function (err) {
 			if (err) {
@@ -36,6 +39,24 @@ exports = module.exports = function (req, res) {
 			next();
 		});
 	});
+
+	view.on('init', function (next) {
+		//query db with logged in user data
+		Team.model.find()
+		.sort('-createdAt')
+		.exec(function(err, teams){
+			if (teams) {
+				locals.teamsAvailable = true;
+				locals.teams = teams;
+			}
+			console.log(teams);
+				next();
+
+		});
+	});
+
+
+	//TODO find all available teams pre render *id
 
 	view.render('request');
 };

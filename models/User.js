@@ -14,6 +14,7 @@ User.add({
 	role: { type: Types.Select, options: 'client, assignee',  initial: true},
 	department: { type: Types.Select,
 		options: 'CRC, pricing strategy, revenue management,',  initial: true },
+	team: { type: Types.Relationship, ref: 'Team', initial: true, required: false },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
@@ -27,5 +28,5 @@ User.schema.virtual('canAccessKeystone').get(function () {
 /**
  * Registration
  */
-User.defaultColumns = 'name, role, isAdmin';
+User.defaultColumns = 'name, role, team, isAdmin';
 User.register();

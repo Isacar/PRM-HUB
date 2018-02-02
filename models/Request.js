@@ -16,32 +16,24 @@ Request.add({
 	client: { type: Types.Relationship, ref: 'User', required: true, initial:true},
 	assignee: { type: Types.Relationship, ref: 'User', filters: { role: 'assignee' }},
 	type: { type: Types.Select, options: [
-		{ value: 'raw', label: 'raw data' },
-		{ value: 'report', label: 'new report' },
-		{ value: 'decision', label: 'decision report' },
-		{ value: 'enhacement', label: 'report enhancement' },
-		{ value: 'process', label: 'new process' },
-		{ value: 'error', label: 'error detected' },
+		{ value: 'raw', label: 'Raw Data' },
+		{ value: 'report', label: 'New Report' },
+		{ value: 'enhacement', label: 'Report Enhancement' },
+		{ value: 'error', label: 'Error Detected' }
 	], required: true, initial:true},
-	format: { type: Types.Select, options: [
-		{ value: 'xlsx', label: 'excel' },
-		{ value: 'flat', label: 'flat file' },
-		{ value: 'tb-view', label: 'tableau View' },
-		{ value: 'tb-workbook', label: 'tableau workbook' },
-		{ value: 'Access', label: 'access' },
-		{ value: 'sql-query', label: 'sql query' },
-		{ value: 'alteryx-wf', label: 'alteryx workflow' },
-		{ value: 'shares-commands', label: 'shares command' },
-		{ value: 'application', label: 'application' },
-
-	], required: true, initial:true},
+	// format: { type: Types.Select, options: [
+	// 	{ value: 'flat', label: 'Flat File' },
+	// 	{ value: 'tb-view', label: 'Tableau View' },
+	// 	{ value: 'tb-workbook', label: 'Tableau Workbook' },
+	// 	{ value: 'other', label: 'Other' }
+	// ], required: true, initial:true},
 	frequency: { type: Types.Select, options:  'ad-hoc, daily, weekly, monthly, bi-monthly, other',
 	required: true , initial:true },
 	priority: { type: Types.Select, options: [
-		{ value: '1', label: 'urgent' },
-		{ value: '2', label: 'very important' },
-		{ value: '3', label: 'important' },
-		{ value: '4', label: 'nice to have' },
+		{ value: '1', label: 'Urgent' },
+		{ value: '2', label: 'Very Important' },
+		{ value: '3', label: 'Important' },
+		{ value: '4', label: 'Nice to have' },
 	], required: true , initial:true},
 	description: { type: Types.Textarea, required: true, initial:true},
 	benefit: { type: Types.Textarea, required: true, initial:true},
@@ -49,6 +41,10 @@ Request.add({
 	closedAt: { type: Date, default: null },
 //TODO auto populate field
 	status: { type: Types.Select, options: 'open, in progress, closed', default: 'open'},
+
+	//TODO how to set default Relationship value for field
+	team: { type: Types.Relationship, ref: 'Team', required: true, initial:true}
+
 });
 
 Request.schema.pre('save', function (next) {

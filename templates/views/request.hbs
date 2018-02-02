@@ -7,11 +7,11 @@
 			<form method="post">
 				<input type="hidden" name="action" value="request">
 				<input type="hidden" name="client" value="{{user._id}}">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+				<div class="form-group col-md-6 {{#if validationErrors.name}}has-error{{/if}}">
 					<label>Name your request</label>
 					<input type="text" name="name"  class="form-control" value="{{formData.name}}">
 				</div>
-				<div class="form-group {{#if validationErrors.priority}}has-error{{/if}}">
+				<div class="form-group col-md-6 {{#if validationErrors.priority}}has-error{{/if}}">
 					<label>How critical is your request?</label>
 					<select name="priority" class="form-control">
 						<option value="">(select one)</option>
@@ -20,7 +20,7 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="form-group {{#if validationErrors.reqType}}has-error{{/if}}">
+				<div class="form-group col-md-6 {{#if validationErrors.reqType}}has-error{{/if}}">
 					<label>What sort of request is it?</label>
 					<select name="type" class="form-control">
 						<option value="">(select one)</option>
@@ -29,7 +29,7 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="form-group {{#if validationErrors.reqFormat}}has-error{{/if}}">
+				{{!-- <div class="form-group {{#if validationErrors.reqFormat}}has-error{{/if}}">
 					<label>What type of output do you need?</label>
 					<select name="format" class="form-control">
 						<option value="">(select one)</option>
@@ -37,8 +37,8 @@
 						<option value="{{value}}">{{label}}</option>
 						{{/each}}
 					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.reqFrequency}}has-error{{/if}}">
+				</div> --}}
+				<div class="form-group col-md-6 {{#if validationErrors.reqFrequency}}has-error{{/if}}">
 					<label>How often do you need the output?</label>
 					<select name="frequency" class="form-control">
 						<option value="">(select one)</option>
@@ -47,14 +47,25 @@
 						{{/each}}
 					</select>
 				</div>
-				<div class="form-group {{#if validationErrors.description}}has-error{{/if}} ">
+				<div class="form-group col-md-12 {{#if validationErrors.description}}has-error{{/if}} ">
 					<label>Describe your request</label>
 					<textarea name="description" placeholder="describe your request..." rows="4" class="form-control">{{formData.description}}</textarea>
 				</div>
-				<div class="form-group {{#if validationErrors.benefit}}has-error{{/if}} ">
+				<div class="form-group col-md-12 {{#if validationErrors.benefit}}has-error{{/if}} ">
 					<label>How and who will it benefit</label>
 					<textarea name="benefit" placeholder="describe the benefit..." rows="4" class="form-control">{{formData.benefit}}</textarea>
 				</div>
+				<div class="form-group col-md-12 {{#if validationErrors.reqFormat}}has-error{{/if}}">
+					<label>Which team should work on this?</label>
+					<select name="team" class="form-control">
+						{{!-- <option value="1">PRMIS</option> --}}
+						{{!-- TODO create new default team if none is found--}}
+						{{#each teams}}
+						<option value="{{_id}}">{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+
 				<div class="form-actions">
 					<button type="submit" class="btn btn-primary">Send</button>
 				</div>

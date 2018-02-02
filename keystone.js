@@ -11,8 +11,8 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'name': 'requests',
-	'brand': 'Request App',
+	'name': 'PRM HUB',
+	'brand': 'PRM HUB',
 
 	'sass': 'public',
 	'static': 'public',

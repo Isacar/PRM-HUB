@@ -36,11 +36,13 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
-	app.get('/', routes.views.index);
+	//app.get('/', routes.views.myRequests);
+	app.all('/', routes.views.teamBoard);
 	app.all('/request', routes.views.request);
 	app.all('/myRequests', routes.views.myRequests);
 	app.all('/assignments', routes.views.assignments);
 	app.all('/assignment/:id', routes.views.assignment);
+	app.all('/teamBoard', routes.views.teamBoard);
 
 
 

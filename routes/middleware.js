@@ -33,6 +33,10 @@ exports.initLocals = function (req, res, next) {
 	if (req.user && req.user.isAdmin) {
 		res.locals.navLinks.push({ label: 'Admin', key: 'admin', href: '/keystone' });
 	}
+	// show team button if part of any team
+	/*if (req.user.team) { //crash cuz at first it does not belong to a team
+		res.locals.navLinks.push({ label: 'Team', key: 'teamBoard', href: '/teamBoard' });
+	}*/
 	next();
 };
 

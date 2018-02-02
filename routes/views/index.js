@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Request = keystone.list('Request');
 
 exports = module.exports = function (req, res) {
 
@@ -9,6 +10,16 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+// *THIS IS NO LONGER USED **/
+	view.on('init', function (next) {
+		//query db with requests from logged in user team
+		console.log(locals);
+
+				next();
+
+		
+	});
+
 	// Render the view
-	view.render('index');
+	view.render('teamBoard');
 };

@@ -12,7 +12,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		//query db with logged in user data
 		Request.model.find()
-		.where('assignee', req.user._id)
+		.where({'assignee':req.user._id})
 		.populate('client')
 		.sort('-createdAt')
 		.exec(function(err, requests){

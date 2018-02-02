@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-8 col-md-offset-2">
+
+			{{#if hasRequests}}
+
+			<div class="panel panel-default">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Open Team Assignments:</div>
+			  <!-- Table -->
+			  <table class="table">
+			    <thead>
+			    	<tr>
+					<th>Request</th>
+					<th>Client</th>
+					<th>Status</th>
+					<th>Priority</th>
+					<th>Created at</th>
+					<th>Assignee</th>
+				</tr>
+			   </thead>
+			   <tbody>
+
+				{{#requests}}
+
+					<tr>
+						<td><a href="assignment/{{_id}}">{{name}}</a></td>
+						<td>{{client.name.first}} {{client.name.last}}</td>
+						<td>{{status}}</td><td>{{priority}}</td>
+						<td>{{date createdAt format='DD-MM-YYYY'}}</td>
+					<form method="post">
+						<td>
+							<input type="hidden" name="action" value="assign">
+							<input type="hidden" name="request" value="{{_id}}">
+							<select name="assignee" class="form-control">
+
+								<option value="none">{{assigned}}</option>
+								{{#assignees}}
+								<option value="{{_id}}">
+									{{name.first}}
+								</option>
+								{{/assignees}}
+							</select>
+						</td>
+						<td>
+						<button type="submit" class="btn btn-primary">Assign</button>
+						</td>
+					</form>
+					</tr>
+
+				{{/requests}}
+
+			   </tbody>
+			  </table>
+			</div>
+			{{else}}
+			<h3 class="request-feedback">The team doesn't have any</h3>
+			{{/if}}
+		</div>
+	</div>
+</div>
