@@ -25,8 +25,8 @@ exports = module.exports = function(req, res) {
 	// - fix mentioned ono step one
 	view.on('init', function(next) {
 		//query db with requests from logged in user team
-		if (!req.user) { //TODO if not part of any team show myRequests
-			res.redirect('/keystone/myRequests');
+		if (req.user.role !== 'assignee') { //TODO if not part of any team show myRequests
+			res.redirect('/myRequests');
 		} else {
 
 			async.series([
