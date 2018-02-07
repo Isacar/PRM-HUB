@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').config();
+//require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
@@ -13,7 +13,6 @@ var handlebars = require('express-handlebars');
 keystone.init({
 	'name': 'PRM HUB',
 	'brand': 'PRM HUB',
-	'port': process.env.PORT || 4000,
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
