@@ -31,7 +31,8 @@ keystone.init({
 	'emails': 'templates/emails',
 
 	'auto update': true,
-	'session': true,
+	'session store': 'mongo',
+
 	'auth': true,
 	'user model': 'User',
 	//'signin url': '/signin'
