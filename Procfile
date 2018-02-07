@@ -1,1 +1,1 @@
-web: node keystone.js -p $PORT
+web: node keystone.js
