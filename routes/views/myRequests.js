@@ -11,6 +11,11 @@ exports = module.exports = function (req, res) {
 	locals.hasRequests = false;
 	view.on('init', function (next) {
 		//query db with logged in user data
+		if (!req.user) {
+			req.flash('error', 'Please sign in to access this page.');
+			res.redirect('/keystone/signin');
+		} else {
+			
 		Request.model.find()
 		.where('client', req.user._id)
 		.populate('assignee')
@@ -21,6 +26,7 @@ exports = module.exports = function (req, res) {
 				locals.requests = requests;
 				next();
 		});
+		}
 	});
 
 	view.render('myRequests');
