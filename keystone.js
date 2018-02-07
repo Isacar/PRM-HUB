@@ -30,8 +30,7 @@ keystone.init({
 	'emails': 'templates/emails',
 
 	'auto update': true,
-	'session store': 'mongo',
-	'mongo': 'mongodb://keystone-user:mydatabase@ds113000.mlab.com:13000/my-mongo',
+	
 	'auth': true,
 	'user model': 'User',
 	//'signin url': '/signin'
