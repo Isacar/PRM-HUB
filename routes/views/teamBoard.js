@@ -73,9 +73,9 @@ exports = module.exports = function(req, res) {
 
 											_.forEach(request.assignees, function(assignee, key, obj) {
 												console.log(assignee);
-												if ( request.assignee._id.equals(assignee._id)) {
-													request.assigned = assignee.name.first;
-												}
+											//	if ( request.assignee._id.equals(assignee._id)) {
+												//	request.assigned = assignee.name.first;
+											//	}
 											});
 
 										} else {
