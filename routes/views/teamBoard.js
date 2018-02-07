@@ -25,7 +25,7 @@ exports = module.exports = function(req, res) {
 	// - fix mentioned ono step one
 	view.on('init', function(next) {
 		//query db with requests from logged in user team
-		if (req.user.role !== 'assignee') { //TODO if not part of any team show myRequests
+		if (req.user.role !== 'assignee' || req.user.team === null) { //TODO if not part of any team show myRequests
 			res.redirect('/myRequests');
 		} else {
 
@@ -39,7 +39,7 @@ exports = module.exports = function(req, res) {
 								'status': 'open'
 							})
 							.populate('assignee')
-							//.sort('-createdAt')
+							.sort('-createdAt')
 							.exec(function(err, requests) {
 								//TODO handle when user has no team
 

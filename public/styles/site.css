@@ -5864,5 +5864,5 @@ body {
 .alert-success {
   text-align: center; }
 
-.request-form {
-  text-align: center; }
+.assigned-team {
+  display: none; }

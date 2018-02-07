@@ -85,6 +85,7 @@ keystone.Email.defaults.templateEngine = require('handlebars');
 keystone.set('nav', {
 	requests: 'requests',
 	users: 'users',
+	teams: 'teams',
 });
 
 //redirect users after signin

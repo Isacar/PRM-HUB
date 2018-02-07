@@ -9,8 +9,12 @@
 
 exports.create = {
 	User: [
-		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'admin@prmsolutions.com', 'password': 'admin', 'isAdmin': true },
+		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'admin@prmsolutions.com', 'password': 'admin', 'isAdmin': true,
+		__ref: 'PRMI' },
 	],
+	Team: [{
+		name: 'PRMI',
+	}],
 };
 
 /*
