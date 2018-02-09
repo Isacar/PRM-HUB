@@ -70,19 +70,18 @@ exports = module.exports = function(req, res) {
 									_.forEach(locals.requests, function(request, key, obj) {
 										request.assignees = users;
 
-										if (typeof request.assignee._id !== 'undefined') { // request has not been assigned
-											//console.log(request);
-
 											_.forEach(request.assignees, function(assignee, key, obj) {
 
-												if ( request.assignee._id.equals(assignee._id)) {
-													request.assigned = assignee.name.first;
+												try{
+													if ( request.assignee._id.equals(assignee._id)) {
+														request.assigned = assignee.name.first;
+													}
+												}
+												catch (err) {
+													request.assigned = 'select';
 												}
 											});
 
-										} else {
-											request.assigned = 'select';
-										}
 										obj[key] = request;
 									});
 								}
