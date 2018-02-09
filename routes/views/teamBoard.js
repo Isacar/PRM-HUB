@@ -70,8 +70,8 @@ exports = module.exports = function(req, res) {
 									_.forEach(locals.requests, function(request, key, obj) {
 										request.assignees = users;
 
-										if (request.assignee !== null) { // request has not been assigned
-											console.log(request);
+										if (typeof request.assignee_id !== 'undefined') { // request has not been assigned
+											//console.log(request);
 
 											_.forEach(request.assignees, function(assignee, key, obj) {
 
