@@ -31,6 +31,7 @@ keystone.pre('render', middleware.requireUser);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
+	api: importRoutes('./api')
 };
 
 // Setup Route Bindings
@@ -45,7 +46,7 @@ exports = module.exports = function (app) {
 	app.all('/teamBoard', routes.views.teamBoard);
 
 
-
+	app.get('/api/requests/list', keystone.middleware.api, routes.api.requests.list);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
