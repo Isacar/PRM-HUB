@@ -35,7 +35,6 @@ exports = module.exports = function (req, res) {
 				console.log(err.errors);
 			} else {
 				locals.requestSubmitted = true;
-				req.flash('success', { title: 'We will get back to you soon. You Rock!'});
 			}
 			next();
 		});

@@ -5836,9 +5836,6 @@ button.close {
   max-width: 100%;
   height: auto; }
 
-.request-feedback {
-  text-align: center; }
-
 .logo-horizontal {
   background: url("../images/logo-vertical.png") 50% 100px no-repeat fixed;
   background-size: cover; }
@@ -5863,6 +5860,19 @@ body {
 
 .alert-success {
   text-align: center; }
+
+.request-form img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.request-feedback {
+  text-align: center;
+  margin-top: 2% !important; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
 
 .assigned-team {
   display: none; }

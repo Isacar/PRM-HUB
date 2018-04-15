@@ -2,10 +2,13 @@
 	<div class="row">
 
 		{{#if requestSubmitted}}
-			<div class="col-sm-8 col-md-6 col-md-offset-4 request-form">
-				<img src="../images/hero.png" class="img-thumbnail" alt="Cinque Terre">
-				<span>The current average completion time is 48 hours</span>
+			<div class="col-sm-8 col-md-12 request-form">
+				<img src="../images/team.jpg" class="img-thumbnail" alt="Cinque Terre">
+				<div class="col-md-5 col-centered request-feedback alert alert-warning" role="alert">
+	  				We'll get back to you in the next 48hrs. YOU ROCK!
+				</div>
 			</div>
+
 		{{else}}
 			<div class="col-sm-8 col-md-6 col-md-offset-3 request-form">
 				<form method="post">
