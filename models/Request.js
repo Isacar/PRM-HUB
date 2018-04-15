@@ -40,7 +40,7 @@ Request.add({
 	createdAt: { type: Date, default: Date.now },
 	closedAt: { type: Date, default: null },
 //TODO auto populate field
-	status: { type: Types.Select, options: 'open, in progress, closed', default: 'open'},
+	status: { type: Types.Select, options: 'open, in progress, closed, on hold', default: 'open'},
 
 	//TODO how to set default Relationship value for field
 	team: { type: Types.Relationship, ref: 'Team', required: true, initial:true}
