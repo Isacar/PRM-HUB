@@ -44,6 +44,7 @@ exports = module.exports = function (app) {
 	app.all('/assignments', routes.views.assignments);
 	app.all('/assignment/:id', routes.views.assignment);
 	app.all('/teamBoard', routes.views.teamBoard);
+	app.all('/trello', routes.views.index);
 
 
 	app.get('/api/requests/list', keystone.middleware.api, routes.api.requests.list);
