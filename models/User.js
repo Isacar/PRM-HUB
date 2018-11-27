@@ -11,7 +11,7 @@ User.add({
 	name: { type: Types.Name, required: true, index: true },
 	email: { type: Types.Email, initial: true, required: true, index: true },
 	password: { type: Types.Password, initial: true, required: true },
-	role: { type: Types.Select, options: 'client, assignee',  initial: true},
+	role: { type: Types.Select, options: 'client, assignee,top',  initial: true},
 	department: { type: Types.Select,
 		options: 'CRC, pricing strategy, revenue management,',  initial: true },
 	team: { type: Types.Relationship, ref: 'Team', initial: true, required: false },

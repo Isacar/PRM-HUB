@@ -37,7 +37,7 @@ body {
 
 }
 .landing-logo{
-	max-width: 70%;
+	max-width: 40%;
 	margin: auto;
 }
 .user-name{
@@ -74,4 +74,9 @@ body {
 
 .assigned-team{
 	display: none;
+}
+
+/*** styles for search form  **/
+.wiki-search{
+	padding-bottom: 3%;
 }

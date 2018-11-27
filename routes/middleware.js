@@ -22,12 +22,14 @@ exports.initLocals = function (req, res, next) {
 		//{ label: 'home', key: 'home', href: '/' },
 		{ label: 'My requests', key: 'myRequests', href: '/myRequests' },
 		{ label: 'New request', key: 'request', href: '/request' },
+		{ label: 'sql Wiki', key: 'sqlWiki', href: '/sqlWiki' }
 
 	];
 	res.locals.user = req.user;
 	//show assignments only for team members
 	if (req.user && req.user.role == 'assignee') {
 		res.locals.navLinks.push({ label: 'My assignments', key: 'assignments', href: '/assignments' });
+		res.locals.navLinks.push({ label: 'CM Stats', key: 'stats', href: '/stats' });
 	}
 	//show admin panel if admin
 	if (req.user && req.user.isAdmin) {

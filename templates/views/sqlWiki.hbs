@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-8 col-md-offset-2">
+
+			<div class="row">
+				<div class="col-sm-8">
+					<form class="navbar-form navbar-left" role="search" method="post">
+						<div class="form-group">
+							<input type="text" name="search_input" class="form-control" placeholder="Search">
+							<input type="hidden" name="action" value="search">
+						</div>
+						<button type="submit" class="btn btn-default">Search</button>
+					</form>
+				</div>
+
+			</div>
+
+
+			<!-- /input-group -->
+
+
+			{{#each queries}}
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{name}}</h3>
+					</div>
+					<h5>Execution time: {{aprox_exec_minutes}} minutes</h5>
+					<h5>Description: {{description}}</h5>
+
+					<pre class="language-sql ">
+					       <code class="language-sql" style="white-space: pre-line;">
+					    	   {{{sql}}}
+					       </code>
+					    </pre>
+
+				</div>
+
+
+				<!-- <div class="alert alert-info" role="alert">
+					{{name}}
+				</div>
+				<pre class="language-sql">
+				<code class="language-sql" style="white-space: pre-line;">
+					{{{sql}}}
+				</code>
+			</pre> -->
+			{{/each}}
+
+		</div>
+	</div>
+</div>

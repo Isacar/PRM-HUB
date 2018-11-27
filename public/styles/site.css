@@ -5850,7 +5850,7 @@ body {
   color: #0060a9; }
 
 .landing-logo {
-  max-width: 70%;
+  max-width: 40%;
   margin: auto; }
 
 .request-description {
@@ -5876,3 +5876,7 @@ body {
 
 .assigned-team {
   display: none; }
+
+/*** styles for search form  **/
+.wiki-search {
+  padding-bottom: 3%; }

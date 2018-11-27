@@ -7,7 +7,7 @@
 		<title>PRM HUB</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.css" rel="stylesheet">
-
+		<link href="/styles/prism.css" rel="stylesheet" />
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
 		{{{isAdminEditorCSS user}}}
@@ -20,7 +20,7 @@
 		<![endif]-->
 
 	</head>
-	<body>
+	<body onload="initViz();">
 		<div id="header">
 			<div class="container">
 				<div role="navigation" class="navbar navbar-default">
@@ -40,6 +40,7 @@
 									</li>
 								{{/each}}
 							</ul>
+
 							<ul class="nav navbar-nav navbar-right">
 								{{#if user}}
 								<li class="user-name"><a href="/"><b>Welcome {{user.name.first}}  </b></a></li>
@@ -47,7 +48,6 @@
 								{{else}}
 								<li><a href="/keystone/signin">Sign In</a></li>
 								{{/if}}
-
 							</ul>
 						</div>
 					</div>
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container navbar navbar-default navbar-fixed-bottom">
 				<img class="img-responsive landing-logo" src="../images/logo-horizontal.png">
 			</div>
 		</div>
@@ -110,7 +110,7 @@
 			//- them specifically here, instead of bootstrap-3.3.5.min.js
 		--}}
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-
+		<script src="prism.js"></script>
 		{{{isAdminEditorJS user}}}
 		<script type="text/javascript">
 		$(function() {
@@ -118,5 +118,21 @@
 			console.log("ready");
 		});
 		</script>
+		<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+		   <script type="text/javascript">
+			function initViz() {
+				var containerDiv = document.getElementById("vizContainer"),
+					url = "https://i2trekviz.somoscopa.com/t/CopaVizHubDevelopment/views/REVENUEGRAPH/REVENUE?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no",
+					options = {
+						hideTabs: true,
+						onFirstInteractive: function() {
+							console.log("Run this code when the viz has finished loading.");
+						}
+					};
+
+				var viz = new tableau.Viz(containerDiv, url, options);
+				// Create a viz object and embed it in the container div.
+			}
+			</script>
 	</body>
 </html>
