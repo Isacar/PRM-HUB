@@ -45,6 +45,7 @@ exports = module.exports = function (app) {
 	app.all('/assignment/:id', routes.views.assignment);
 	app.all('/teamBoard', routes.views.teamBoard);
 	app.all('/sqlWiki', routes.views.sqlWiki);
+	app.all('/stats/:viz', routes.views.stats);
 	app.all('/stats', routes.views.stats);
 
 

@@ -11,6 +11,14 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'stats';
 
+	view.on('init', function (next) {
+		//query db with logged in user data
+		console.log(req.viz);
+		// TODO  check if parameter is null so a defualt view needs to be shown
+		locals.targetViz = 'https://i2trekviz.somoscopa.com/t/CopaVizHubDevelopment/views/REVENUEGRAPH/REVENUE?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no';
+		next();
+	});
+
 
 	// Render the view
 	view.render('stats');
