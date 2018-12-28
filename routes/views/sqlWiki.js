@@ -25,6 +25,7 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', { action: 'search' }, function (next) {
 		loadLanguages(['sql']);
+		locals.search_input = req.body.search_input;
 		Query.model.find({tags : req.body.search_input.toLowerCase()}) // TODO prevent injection?? **
 		.exec(function(err, queries){
 			if (queries) {
