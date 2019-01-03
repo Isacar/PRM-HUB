@@ -38,7 +38,7 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	//app.get('/', routes.views.myRequests);
-	app.all('/', routes.views.teamBoard);
+	app.all('/', routes.views.landing);
 	app.all('/request', routes.views.request);
 	app.all('/myRequests', routes.views.myRequests);
 	app.all('/assignments', routes.views.assignments);

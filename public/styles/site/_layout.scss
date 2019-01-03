@@ -3,10 +3,14 @@
 }
 
 #footer {
-	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
+	padding: 5px;
 	color: #777777;
+	width: 100%;
+}
+
+#body{
+	height: 100%;
 }
 
 .gallery-image img{
@@ -30,6 +34,10 @@ body {
 
 .navbar-default .navbar-brand {
 	color: $copa-blue;
+	background: url('../images/ACE-short-blue.png') no-repeat right top;
+  	background-size: contain;
+	padding-right: 135px;
+
 
 }
 .navbar-default .navbar-nav > li > a {
@@ -88,5 +96,30 @@ iframe{
 
 .panel-default {
     border-color: #fff;
-    
+
+}
+html,body{height:100%;}
+
+.landing {
+  background: url('../images/stars.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  .ace-caption{
+	  padding: 30px 30px 30px 30px;
+        width: 66.66666667%;
+        color: #fff;
+        z-index: 99;
+        position: absolute;
+        right: 0px;
+        bottom: 200px;
+        width: 325px;
+        font-size: 25px;
+	   text-align: center;
+  }
+
 }
