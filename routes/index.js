@@ -47,6 +47,7 @@ exports = module.exports = function (app) {
 	app.all('/sqlWiki', routes.views.sqlWiki);
 	app.all('/stats/:viz', routes.views.stats);
 	app.all('/stats', routes.views.stats);
+	app.all('/schedule', routes.views.schedule);
 
 
 

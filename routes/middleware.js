@@ -31,6 +31,7 @@ exports.initLocals = function (req, res, next) {
 		res.locals.navLinks.push({ label: 'My assignments', key: 'assignments', href: '/assignments' });
 		res.locals.navLinks.push({ label: 'CM Stats', key: 'stats', href: '/stats' });
 		res.locals.navLinks.push({ label: 'sql Wiki', key: 'sqlWiki', href: '/sqlWiki' });
+		res.locals.navLinks.push({ label: 'Training', key: 'schedule', href: '/schedule' });
 	}
 	//show admin panel if admin
 	if (req.user && req.user.isAdmin) {
