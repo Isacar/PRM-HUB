@@ -9,7 +9,7 @@ exports = module.exports = function (req, res) {
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'stats';
+	locals.section = 'resources';
 
 	view.on('init', function (next) {
 		//query db with logged in user data
@@ -23,5 +23,5 @@ exports = module.exports = function (req, res) {
 
 
 	// Render the view
-	view.render('stats');
+	view.render('resources');
 };

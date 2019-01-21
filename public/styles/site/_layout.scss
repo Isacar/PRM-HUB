@@ -42,7 +42,11 @@ body {
 }
 .navbar-default .navbar-nav > li > a {
 	color: $copa-blue;
-
+}
+.navbar-left{
+	a{
+		height: 60px;
+	}
 }
 .landing-logo{
 	max-width: 40%;

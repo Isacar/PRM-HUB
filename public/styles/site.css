@@ -5857,6 +5857,9 @@ body {
 .navbar-default .navbar-nav > li > a {
   color: #0060a9; }
 
+.navbar-left a {
+  height: 60px; }
+
 .landing-logo {
   max-width: 40%;
   margin: auto; }

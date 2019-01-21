@@ -20,17 +20,17 @@ var _ = require('lodash');
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		//{ label: 'home', key: 'home', href: '/' },
-		{ label: 'My requests', key: 'myRequests', href: '/myRequests' },
+		{ label: 'CM Stats', key: 'stats', href: '/stats' },
+		{ label: 'Wiki', key: 'Wiki', href: '/sqlWiki' },
+		{ label: 'Requests', key: 'Requests', href: '/myRequests' },
 		{ label: 'New request', key: 'request', href: '/request' },
-		{ label: 'Training', key: 'schedule', href: '/schedule' }
+		{ label: 'Training', key: 'schedule', href: '/schedule' },
+		{ label: 'Resources', key: 'resources', href: '/resources' }
 	];
 	res.locals.user = req.user;
 	//show assignments only for team members
 	if (req.user && req.user.role == 'assignee') {
 		res.locals.navLinks.push({ label: 'My assignments', key: 'assignments', href: '/assignments' });
-		res.locals.navLinks.push({ label: 'CM Stats', key: 'stats', href: '/stats' });
-		res.locals.navLinks.push({ label: 'sql Wiki', key: 'sqlWiki', href: '/sqlWiki' });
-
 	}
 	//show admin panel if admin
 	if (req.user && req.user.isAdmin) {
