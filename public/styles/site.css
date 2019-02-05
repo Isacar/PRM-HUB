@@ -5832,7 +5832,7 @@ button.close {
   width: 100%; }
 
 #body {
-  height: 100%; }
+  padding-bottom: 100px; }
 
 .gallery-image img {
   display: block;
@@ -5855,7 +5855,10 @@ body {
   width: 170px; }
 
 .navbar-default .navbar-nav > li > a {
-  color: #0060a9; }
+  color: #0060a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 
 .navbar-left a {
   height: 60px; }
@@ -5942,3 +5945,6 @@ html, body, .ace-lading {
   background-size: cover;
   width: 100%;
   position: relative; }
+
+.resources .btn-primary {
+  width: 100%; }

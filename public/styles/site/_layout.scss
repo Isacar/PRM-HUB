@@ -10,7 +10,8 @@
 }
 
 #body{
-	height: 100%;
+	//height: 100%;
+	padding-bottom: 100px;
 }
 
 .gallery-image img{
@@ -39,13 +40,18 @@ body {
 	padding-right: 135px;
 	padding: 30px 50px;
 	width: 170px;
+
 }
 .navbar-default .navbar-nav > li > a {
 	color: $copa-blue;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .navbar-left{
 	a{
 		height: 60px;
+
 	}
 }
 .landing-logo{
@@ -154,4 +160,10 @@ html,body, .ace-lading {height:100%;}
 	background-size: cover;
 	width: 100%;
 	position: relative;
+}
+
+.resources{
+	.btn-primary{
+		width: 100%;
+	}
 }
