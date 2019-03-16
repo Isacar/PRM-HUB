@@ -5864,8 +5864,11 @@ body {
   height: 60px; }
 
 .landing-logo {
-  max-width: 40%;
+  max-width: 80%;
   margin: auto; }
+  @media screen and (min-width: 728px) {
+    .landing-logo {
+      max-width: 30%; } }
 
 .request-description {
   resize: none;
@@ -5894,6 +5897,15 @@ body {
 /*** styles for search form  **/
 .wiki-search {
   padding-bottom: 3%; }
+  .wiki-search form {
+    text-align: center; }
+    .wiki-search form label {
+      margin: 1%; }
+    @media (min-width: 768px) {
+      .wiki-search form input:first-child {
+        width: 300px !important; } }
+    .wiki-search form button {
+      padding: 6.5px 12px; }
 
 iframe {
   min-height: 200px !important; }
@@ -5948,3 +5960,6 @@ html, body, .ace-lading {
 
 .resources .btn-primary {
   width: 100%; }
+
+iframe {
+  width: 100% !important; }

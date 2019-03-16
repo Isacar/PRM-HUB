@@ -7,7 +7,7 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Set locals
-	locals.section = 'myRequests';
+	locals.section = 'Requests';
 	locals.hasRequests = false;
 	view.on('init', function (next) {
 		//query db with logged in user data
@@ -15,7 +15,7 @@ exports = module.exports = function (req, res) {
 			req.flash('error', 'Please sign in to access this page.');
 			res.redirect('/keystone/signin');
 		} else {
-			
+
 		Request.model.find()
 		.where('client', req.user._id)
 		.populate('assignee')

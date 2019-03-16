@@ -55,8 +55,11 @@ body {
 	}
 }
 .landing-logo{
-	max-width: 40%;
+	max-width: 80%;
 	margin: auto;
+	@media screen and (min-width: 728px) {
+		max-width: 30%;
+	}
 }
 .user-name{
 	//border-right: 0.5px solid #e7e7e7;
@@ -97,6 +100,21 @@ body {
 /*** styles for search form  **/
 .wiki-search{
 	padding-bottom: 3%;
+	form{
+		text-align: center;
+		label{
+			margin: 1%;
+		}
+		input:first-child{
+			@media (min-width: 768px)
+			{
+     			width: 300px !important;
+			}
+		}
+		button{
+			    padding: 6.5px 12px;
+		}
+	}
 }
 
 
@@ -167,3 +185,9 @@ html,body, .ace-lading {height:100%;}
 		width: 100%;
 	}
 }
+
+
+	iframe{
+
+		width: 100% !important;
+	}

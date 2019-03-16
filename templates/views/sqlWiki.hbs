@@ -1,30 +1,33 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-md-8 col-md-offset-2">
+		<div class="col-sm-12 col-md-12">
 
 			<div class="row">
-				<div class="col-sm-8 col-md-12">
+				<div class="wiki-search col-sm-8 col-md-12">
 					<form class="navbar-form" role="search" method="post">
 						<div class="input-group">
 							<input type="text" name="search_input" class="form-control" placeholder="Search" value="{{search_input}}">
 							<input type="hidden" name="action" value="search">
-
 							<span class="input-group-btn">
 						        <button type="submit" class="btn btn-default wiki-send" type="button">Go!</button>
 						     </span>
 						</div>
-
+						<div class="">
+							<label class="radio-inline"><input type="radio" name="optradio" checked>Sql</input></label>
+						    	<label class="radio-inline"><input type="radio" name="optradio">Documentation</input>
+						 	</label><input type="radio" name="optradio">Reports</input>
+						</div>
 					</form>
-				</div>
 
+				</div>
 			</div>
 
-
+			<!--<<h3>{{resource.name}}</h3>
+			<h4>Description: {{resource.description}}</h4>
+			<h4>Metrics:{{#each resource.metrics}}{{this}}&#44; {{/each}}</h4>
+			<div id="vizContainer-1" class="col-sm-12"></div>-->
 			<!-- /input-group -->
-
-
 			{{#each queries}}
-
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">{{name}}</h3>
@@ -36,21 +39,28 @@
 					       <code class="language-sql" style="white-space: pre-line;">
 					    	   {{{sql}}}
 					       </code>
-					    </pre>
+				    </pre>
 
 				</div>
-
-
-				<!-- <div class="alert alert-info" role="alert">
-					{{name}}
-				</div>
-				<pre class="language-sql">
-				<code class="language-sql" style="white-space: pre-line;">
-					{{{sql}}}
-				</code>
-			</pre> -->
 			{{/each}}
 
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	function initViz() {
+		var containerDiv = document.getElementById("vizContainer-1"),
+			//url = "",
+			url = "{{{resource.url}}}",
+			options = {
+				hideTabs: true,
+				onFirstInteractive: function() {
+					console.log("Run this code when the viz has finished loading.");
+				}
+			};
+
+		var viz = new tableau.Viz(containerDiv, url, options);
+		// Create a viz object and embed it in the container div.
+	}
+</script>
