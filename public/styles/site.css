@@ -5826,10 +5826,13 @@ button.close {
   margin-top: 30px; }
 
 #footer {
-  margin-top: 30px;
   border-top: 1px solid #eeeeee;
-  padding-top: 30px;
-  color: #777777; }
+  padding: 5px;
+  color: #777777;
+  width: 100%; }
+
+#body {
+  padding-bottom: 100px; }
 
 .gallery-image img {
   display: block;
@@ -5844,14 +5847,28 @@ body {
   font-family: 'Source Sans Pro', sans-serif; }
 
 .navbar-default .navbar-brand {
-  color: #0060a9; }
+  color: #0060a9;
+  background: url("../images/ACE-short-blue.png") no-repeat right top;
+  background-size: contain;
+  padding-right: 135px;
+  padding: 30px 50px;
+  width: 170px; }
 
 .navbar-default .navbar-nav > li > a {
-  color: #0060a9; }
+  color: #0060a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.navbar-left a {
+  height: 60px; }
 
 .landing-logo {
-  max-width: 40%;
+  max-width: 80%;
   margin: auto; }
+  @media screen and (min-width: 728px) {
+    .landing-logo {
+      max-width: 30%; } }
 
 .request-description {
   resize: none;
@@ -5880,6 +5897,69 @@ body {
 /*** styles for search form  **/
 .wiki-search {
   padding-bottom: 3%; }
+  .wiki-search form {
+    text-align: center; }
+    .wiki-search form label {
+      margin: 1%; }
+    @media (min-width: 768px) {
+      .wiki-search form input:first-child {
+        width: 300px !important; } }
+    .wiki-search form button {
+      padding: 6.5px 12px; }
 
 iframe {
   min-height: 200px !important; }
+
+.panel-default {
+  border-color: #fff; }
+
+html, body, .ace-lading {
+  height: 100%; }
+
+.landing {
+  background: url("../images/stars-bg-01.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  position: relative; }
+  .landing .ace-caption {
+    padding-left: 30%;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    color: #fff; }
+    @media screen and (min-width: 1200px) {
+      .landing .ace-caption {
+        padding-left: 78%; } }
+
+.about p, .about li {
+  color: #676262; }
+
+.about h3 {
+  color: #0060a9; }
+
+.about .area:last-child {
+  padding-bottom: 100px; }
+
+.about .area {
+  text-align: center; }
+  .about .area li {
+    text-align: left; }
+
+.training {
+  background: url("../images/training.PNG") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  position: relative; }
+
+.resources .btn-primary {
+  width: 100%; }
+
+iframe {
+  width: 100% !important; }

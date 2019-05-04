@@ -5,6 +5,8 @@ var loadLanguages = require('prismjs/components/');
 var Prism = require('prismjs');
 var _ = require('lodash');
 
+var Resource = keystone.list('Resource');
+
 exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
@@ -12,7 +14,7 @@ exports = module.exports = function (req, res) {
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'sqlWiki';
+	locals.section = 'Wiki';
 
 // *THIS IS NO LONGER USED **/
 	view.on('init', function (next) {
@@ -25,6 +27,22 @@ exports = module.exports = function (req, res) {
 
 	view.on('post', { action: 'search' }, function (next) {
 		loadLanguages(['sql']);
+		locals.search_input = req.body.search_input;
+
+/**look for other resources
+		Resource.model.find() // TODO prevent injection??
+		.exec(function(err, resources){
+			if (resources) {
+				_.forEach(resources, function(resource, key, obj){
+					console.log(resource);
+					locals.resource = resource;
+				});
+			}
+			next();
+		});
+		**/
+
+		///**start query search **
 		Query.model.find({tags : req.body.search_input.toLowerCase()}) // TODO prevent injection?? **
 		.exec(function(err, queries){
 			if (queries) {
@@ -40,6 +58,7 @@ exports = module.exports = function (req, res) {
 			//console.log(queries);
 			next();
 		});
+		//*** end query execution **/
 	});
 
 

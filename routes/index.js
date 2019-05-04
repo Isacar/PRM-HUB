@@ -38,7 +38,7 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	//app.get('/', routes.views.myRequests);
-	app.all('/', routes.views.teamBoard);
+	app.all('/', routes.views.landing);
 	app.all('/request', routes.views.request);
 	app.all('/myRequests', routes.views.myRequests);
 	app.all('/assignments', routes.views.assignments);
@@ -47,6 +47,10 @@ exports = module.exports = function (app) {
 	app.all('/sqlWiki', routes.views.sqlWiki);
 	app.all('/stats/:viz', routes.views.stats);
 	app.all('/stats', routes.views.stats);
+	app.all('/schedule', routes.views.schedule);
+	app.all('/resources', routes.views.resources);
+	app.all('/resources/:target', routes.views.resources);
+
 
 
 

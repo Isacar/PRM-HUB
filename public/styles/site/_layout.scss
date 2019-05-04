@@ -3,10 +3,15 @@
 }
 
 #footer {
-	margin-top: 30px;
 	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
+	padding: 5px;
 	color: #777777;
+	width: 100%;
+}
+
+#body{
+	//height: 100%;
+	padding-bottom: 100px;
 }
 
 .gallery-image img{
@@ -30,15 +35,31 @@ body {
 
 .navbar-default .navbar-brand {
 	color: $copa-blue;
+	background: url('../images/ACE-short-blue.png') no-repeat right top;
+  	background-size: contain;
+	padding-right: 135px;
+	padding: 30px 50px;
+	width: 170px;
 
 }
 .navbar-default .navbar-nav > li > a {
 	color: $copa-blue;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.navbar-left{
+	a{
+		height: 60px;
 
+	}
 }
 .landing-logo{
-	max-width: 40%;
+	max-width: 80%;
 	margin: auto;
+	@media screen and (min-width: 728px) {
+		max-width: 30%;
+	}
 }
 .user-name{
 	//border-right: 0.5px solid #e7e7e7;
@@ -79,9 +100,94 @@ body {
 /*** styles for search form  **/
 .wiki-search{
 	padding-bottom: 3%;
+	form{
+		text-align: center;
+		label{
+			margin: 1%;
+		}
+		input:first-child{
+			@media (min-width: 768px)
+			{
+     			width: 300px !important;
+			}
+		}
+		button{
+			    padding: 6.5px 12px;
+		}
+	}
 }
 
 
 iframe{
 	min-height: 200px !important;
 }
+
+.panel-default {
+    border-color: #fff;
+
+}
+html,body, .ace-lading {height:100%;}
+
+.landing {
+  background: url('../images/stars-bg-01.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  .ace-caption{
+	  padding-left: 30%;
+	  padding-right: 10px;
+	  width: 100%;
+	  height: 100%;
+	  text-align: right;
+	  color: #fff;
+	  @media screen and (min-width: 1200px) {
+		  padding-left: 78%;
+	  }
+  }
+
+
+
+}
+.about{
+	p, li{
+	    color: #676262;
+	}
+	h3{
+		color: #0060a9;
+	}
+	.area:last-child{
+		padding-bottom: 100px;
+	}
+	.area{
+		text-align: center;
+		li{
+			text-align: left;
+		}
+
+	}
+}
+
+.training{
+	background: url('../images/training.PNG') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	position: relative;
+}
+
+.resources{
+	.btn-primary{
+		width: 100%;
+	}
+}
+
+
+	iframe{
+
+		width: 100% !important;
+	}

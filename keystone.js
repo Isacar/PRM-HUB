@@ -30,7 +30,7 @@ keystone.init({
 	'emails': 'templates/emails',
 
 	'auto update': true,
-	
+
 	'auth': true,
 	'user model': 'User',
 	//'signin url': '/signin'
@@ -73,7 +73,7 @@ keystone.set('email locals', {
 keystone.set('email tests', require('./routes/emails'));
 
 //change sign in logo image
-keystone.set('signin logo', '../images/logo-vertical.png');
+keystone.set('signin logo', '../images/ACE-vertical.png');
 
 // Switch Keystone Email defaults to handlebars
 keystone.Email.defaults.templateExt = 'hbs';
