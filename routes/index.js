@@ -39,7 +39,8 @@ exports = module.exports = function (app) {
 	// Views
 	//app.get('/', routes.views.myRequests);
 	app.all('/', routes.views.landing);
-	app.all('/request', routes.views.request);
+     //app.all('/', routes.views.landing);
+/*	app.all('/request', routes.views.request);
 	app.all('/myRequests', routes.views.myRequests);
 	app.all('/assignments', routes.views.assignments);
 	app.all('/assignment/:id', routes.views.assignment);
@@ -49,12 +50,13 @@ exports = module.exports = function (app) {
 	app.all('/stats', routes.views.stats);
 	app.all('/schedule', routes.views.schedule);
 	app.all('/resources', routes.views.resources);
-	app.all('/resources/:target', routes.views.resources);
+	app.all('/resources/:target', routes.views.resources);*/
 
 
 
 
 	app.get('/api/requests/list', keystone.middleware.api, routes.api.requests.list);
+     app.get('/api/flights/list', keystone.middleware.api, routes.api.flights.list);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
