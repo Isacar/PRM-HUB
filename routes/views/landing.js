@@ -10,11 +10,6 @@ exports = module.exports = function (req, res) {
 	locals.section = 'landing';
 	locals.hasRequests = false;
 
-	res.writeHead(302, {
-	  'Location': 'http://acehub.copaair.com'
-	  //add other headers here...
-	});
-	res.end();
 
-	//view.render('index');
+	view.render('index');
 };
